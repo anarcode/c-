@@ -1,0 +1,5 @@
+C:\Desarrollo\C#\CadenaDeMontaje\CadenaDeMontaje\bin\Debug\CadenaDeMontaje.exe.config
+C:\Desarrollo\C#\CadenaDeMontaje\CadenaDeMontaje\bin\Debug\CadenaDeMontaje.exe
+C:\Desarrollo\C#\CadenaDeMontaje\CadenaDeMontaje\bin\Debug\CadenaDeMontaje.pdb
+C:\Desarrollo\C#\CadenaDeMontaje\CadenaDeMontaje\obj\Debug\CadenaDeMontaje.exe
+C:\Desarrollo\C#\CadenaDeMontaje\CadenaDeMontaje\obj\Debug\CadenaDeMontaje.pdb

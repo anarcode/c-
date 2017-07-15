@@ -1,5 +1,0 @@
-C:\Desarrollo\C#\CadenaDeMontaje\CadenaDeMontaje.Core\bin\Debug\CadenaDeMontaje.Core.dll
-C:\Desarrollo\C#\CadenaDeMontaje\CadenaDeMontaje.Core\bin\Debug\CadenaDeMontaje.Core.pdb
-C:\Desarrollo\C#\CadenaDeMontaje\CadenaDeMontaje.Core\obj\Debug\CadenaDeMontaje.Core.csprojResolveAssemblyReference.cache
-C:\Desarrollo\C#\CadenaDeMontaje\CadenaDeMontaje.Core\obj\Debug\CadenaDeMontaje.Core.dll
-C:\Desarrollo\C#\CadenaDeMontaje\CadenaDeMontaje.Core\obj\Debug\CadenaDeMontaje.Core.pdb

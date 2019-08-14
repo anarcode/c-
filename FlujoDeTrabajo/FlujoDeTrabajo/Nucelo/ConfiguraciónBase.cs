@@ -4,11 +4,17 @@
 
     public class ConfiguraciónBase : IConfiguraciónDeFlujo
     {
-        public IProcesadorDeAtributos ProcesadorDeAtributos { get; private set; }
+        public IProcesadorDeParámetros ProcesadorDeParámetros { get; private set; }
+
+        public IProcesadorDeCriticidad ProcesadorDeCriticidad { get; private set; }
+
+        public IEjecutorDeFlujo EjecutorDeFlujo { get; private set; }
 
         public ConfiguraciónBase()
         {
-            ProcesadorDeAtributos = new ProcesadorDeAtributos();
+            ProcesadorDeParámetros = new ProcesadorDeParámetros();
+            ProcesadorDeCriticidad = new ProcesadorDeCriticidad();
+            EjecutorDeFlujo = new EjecutorDeFlujo();
         }
     }
 }

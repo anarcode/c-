@@ -45,7 +45,10 @@
     <Compile Include="Fases\Autorización.cs" />
     <Compile Include="Fases\Autenticación.cs" />
     <Compile Include="Fases\CrearAsunto.cs" />
-    <Compile Include="Nucelo\FlujoDePrueba.cs" />
+    <Compile Include="Flujos\FlujoDeCreaciónDeAsunto.cs" />
+    <Compile Include="Flujos\FlujoDePrueba.cs" />
+    <Compile Include="Nucelo\Constantes.cs" />
+    <Compile Include="Nucelo\Observador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

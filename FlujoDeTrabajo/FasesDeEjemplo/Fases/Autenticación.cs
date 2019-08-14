@@ -1,15 +1,18 @@
 ﻿namespace FasesDeEjemplo.Fases
 {
     using Entidades;
-    using FlujoDeTrabajo.Fases;
+    using FlujoDeTrabajo.Atributos;
     using FlujoDeTrabajo.Interfaces;
     using FlujoDeTrabajo.Nucelo;
 
-    public class Autenticación : FaseSinParámetros<Usuario>
+    // Sería interesante que cada fase pudiera tener un [GestorDeError] al que le invoque si falla
+    // y que decida él la lógica
+    public class Autenticación : IFase
     {
-        public override IResultado<Usuario> Procesar()
+        [MétodoDeFlujo(Criticidad.QueArdaTodoElFuegoPurifica)]
+        public IResultado<Usuario> Procesar(string nombre)
         {
-            return new Resultado<Usuario>(true, new Usuario { Id = 1, Nombre = "Pamplinas" });
+            return new Resultado<Usuario>(true, new Usuario { Id = 1, Nombre = nombre, Roles = { "ABC", "DEF" } });
         }
     }
 }

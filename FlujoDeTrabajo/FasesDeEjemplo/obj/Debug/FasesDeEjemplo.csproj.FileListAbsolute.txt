@@ -5,3 +5,10 @@ C:\Desarrollo\C#\FlujoDeTrabajo\FasesDeEjemplo\bin\Debug\FlujoDeTrabajo.dll
 C:\Desarrollo\C#\FlujoDeTrabajo\FasesDeEjemplo\bin\Debug\FlujoDeTrabajo.pdb
 C:\Desarrollo\C#\FlujoDeTrabajo\FasesDeEjemplo\obj\Debug\FasesDeEjemplo.dll
 C:\Desarrollo\C#\FlujoDeTrabajo\FasesDeEjemplo\obj\Debug\FasesDeEjemplo.pdb
+C:\Desarrollo\C#\FlujoDeTrabajo\backup\FasesDeEjemplo\bin\Debug\FasesDeEjemplo.dll
+C:\Desarrollo\C#\FlujoDeTrabajo\backup\FasesDeEjemplo\bin\Debug\FasesDeEjemplo.pdb
+C:\Desarrollo\C#\FlujoDeTrabajo\backup\FasesDeEjemplo\bin\Debug\FlujoDeTrabajo.dll
+C:\Desarrollo\C#\FlujoDeTrabajo\backup\FasesDeEjemplo\bin\Debug\FlujoDeTrabajo.pdb
+C:\Desarrollo\C#\FlujoDeTrabajo\backup\FasesDeEjemplo\obj\Debug\FasesDeEjemplo.csprojResolveAssemblyReference.cache
+C:\Desarrollo\C#\FlujoDeTrabajo\backup\FasesDeEjemplo\obj\Debug\FasesDeEjemplo.dll
+C:\Desarrollo\C#\FlujoDeTrabajo\backup\FasesDeEjemplo\obj\Debug\FasesDeEjemplo.pdb

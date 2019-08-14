@@ -4,7 +4,7 @@
     {
         bool OperaciónCorrecta { get; }
 
-        T Instancia();
+        T ObtenerInstancia();
 
         string Mensaje { get; }
     }

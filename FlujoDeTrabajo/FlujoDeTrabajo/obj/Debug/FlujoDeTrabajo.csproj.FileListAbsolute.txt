@@ -2,3 +2,8 @@ C:\Desarrollo\C#\FlujoDeTrabajo\FlujoDeTrabajo\bin\Debug\FlujoDeTrabajo.dll
 C:\Desarrollo\C#\FlujoDeTrabajo\FlujoDeTrabajo\bin\Debug\FlujoDeTrabajo.pdb
 C:\Desarrollo\C#\FlujoDeTrabajo\FlujoDeTrabajo\obj\Debug\FlujoDeTrabajo.dll
 C:\Desarrollo\C#\FlujoDeTrabajo\FlujoDeTrabajo\obj\Debug\FlujoDeTrabajo.pdb
+C:\Desarrollo\C#\FlujoDeTrabajo\backup\FlujoDeTrabajo\bin\Debug\FlujoDeTrabajo.dll
+C:\Desarrollo\C#\FlujoDeTrabajo\backup\FlujoDeTrabajo\bin\Debug\FlujoDeTrabajo.pdb
+C:\Desarrollo\C#\FlujoDeTrabajo\backup\FlujoDeTrabajo\obj\Debug\FlujoDeTrabajo.csprojResolveAssemblyReference.cache
+C:\Desarrollo\C#\FlujoDeTrabajo\backup\FlujoDeTrabajo\obj\Debug\FlujoDeTrabajo.dll
+C:\Desarrollo\C#\FlujoDeTrabajo\backup\FlujoDeTrabajo\obj\Debug\FlujoDeTrabajo.pdb

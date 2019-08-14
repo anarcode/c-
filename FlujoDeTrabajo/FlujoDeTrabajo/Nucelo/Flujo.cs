@@ -1,58 +1,95 @@
 ﻿namespace FlujoDeTrabajo.Nucelo
 {
     using Atributos;
+    using Excepciones;
     using Interfaces;
     using System.Collections.Generic;
     using System.Linq;
 
+    // Tengo que poder añadir flujos
+    // Faltan observadores de eventos
+
+    // Puedo crear un GestorDeFlujo que le inyecto al que lo quiera que permita el salto de fases, etc.
+    // Tendré que poner métodos como SaltarFase(nDeFases), IrAFase<T>, Finalizar...
+
+    // La idea es que cuando acabe un subflujo, se inserte un tipo ResutltadoDeSubflujo con su resultado interno
+    // que lo podrá mirar el DatosDeEjecución
     public abstract class Flujo
     {
-        private IConfiguraciónDeFlujo _configuración;
+        // CUIDADO: Ahora los resultados van por flujo, asi que no hay uno general
+
+        internal Flujo _Padre { get; set; }
+
+        internal IConfiguraciónDeFlujo Configuración { get; private set; }
+
+        public string Nombre { get; private set; }
 
         public virtual List<IFase> Fases { get; private set; }
 
-        public Flujo(IConfiguraciónDeFlujo configuración)
+        internal List<Flujo> Flujos { get; private set; }
+
+        internal IFase FaseActual { get; set; }
+
+        internal List<IResultado<IEntidad>> ResultadoActual { get; private set; }
+
+        [DatoDeFlujo("gestorDeFlujo")]
+        internal GestorDeFlujo GestorDeFlujo { get; private set; }
+
+        [DatoDeFlujo("datosDeEjecución")]
+        internal DatosDeEjecución DatosDeEjecución { get; private set; }
+
+        public List<IObservadorDeFlujo> Observadores { get; private set; }
+
+        public Flujo(string nombre, IConfiguraciónDeFlujo configuración)
         {
-            _configuración = configuración;
+            Nombre = nombre;
+            Configuración = configuración;
+            Configuración.ProcesadorDeParámetros.EstablecerFlujo(this);
+            Configuración.ProcesadorDeCriticidad.EstablecerFlujo(this);
+            Configuración.EjecutorDeFlujo.EstablecerFlujo(this);
+
             Fases = new List<IFase>();
+            Flujos = new List<Flujo>();
+            Observadores = new List<IObservadorDeFlujo>();
+            GestorDeFlujo = new GestorDeFlujo(this);
+            ResultadoActual = new List<IResultado<IEntidad>>();
+            DatosDeEjecución = new DatosDeEjecución();
         }
 
-        public Flujo() : this(new ConfiguraciónBase())
-        {
-            _configuración.ProcesadorDeAtributos.EstablecerFlujo(this);
-        }
+        public Flujo(string nombre) : this(nombre, new ConfiguraciónBase()) { }
 
-        public void Ejecutar()
+        public void AñadirObservador(IObservadorDeFlujo observador)
         {
-            List<IResultado<IEntidad>> resultado = new List<IResultado<IEntidad>>();
-            Fases.ForEach(f =>
+            if (!Observadores.Contains(observador))
             {
-                object[] parámetros = null;
+                Observadores.Add(observador);
+            }
+        }
 
-                var método = f.GetType().GetMethods()
-                    .Where(m => {
-                        var atributos = m.GetCustomAttributes(typeof(AtributoDeMétodoDeFlujo), true);
-                        if (atributos.Length == 0)
-                        {
-                            return false;
-                        }
+        public void AñadirDefiniciónDeFlujo(Flujo flujo)
+        {
+            flujo._Padre = this;
+            if(Flujos.Where(f => f.Nombre == flujo.Nombre).ToList().Count == 0)
+            {
+                Flujos.Add(flujo);
+            }
+        }
 
-                        parámetros = _configuración.ProcesadorDeAtributos.Procesar(atributos[0] as AtributoDeMétodoDeFlujo, m, resultado);
-                        return true;
-                    })
-                    .First();
+        public DatosDeEjecución Ejecutar()
+        {
+            ResultadoActual = new List<IResultado<IEntidad>>();
+            List<ResultadoDeEjecuciónDeFase<IEntidad>> resultadosInternos = new List<ResultadoDeEjecuciónDeFase<IEntidad>>();
+            DatosDeEjecución = new DatosDeEjecución();
 
-                if(método != null)
-                {
-                    // Aqui igual compensa meter un try, no????
-                    var resultadoDeEjecución = método.Invoke(f, parámetros) as IResultado<IEntidad>;
-                    resultado.Add(resultadoDeEjecución);
-                }
-                else
-                {
-                    resultado.Add(new Error<IEntidad>(null, $"No se ha encontrado el método {método.Name}"));
-                }
-            });
+            try
+            {
+                Configuración.EjecutorDeFlujo.Ejecutar();
+                return DatosDeEjecución;
+            }
+            catch(QuemarloTodo excepción)
+            {
+                throw new ExcepciónDeFlujo(excepción.Error, $"No se ha podido completar el flujo {this.GetType().Name}", excepción);
+            }
         }
     }
 }

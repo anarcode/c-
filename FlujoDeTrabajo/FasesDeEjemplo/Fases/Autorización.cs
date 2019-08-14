@@ -4,21 +4,27 @@
     using FlujoDeTrabajo.Atributos;
     using FlujoDeTrabajo.Interfaces;
     using FlujoDeTrabajo.Nucelo;
+    using System.Collections.Generic;
+    using System.Linq;
+    //using Flujos = Nucelo.Constantes.Flujos;
 
     public class Autorización : IFase
     {
-        [MétodoDeFlujo]
-        public IResultado<Usuario> Procesar(Usuario usuario)
+        [MétodoDeFlujo(Criticidad.AvisarUnPoco)]
+        public IResultado<Usuario> Procesar(Usuario usuario, List<string> rolesPermitidos, GestorDeFlujo gestorDeFlujo)
         {
-            var resultadoDeOperación = usuario.Id == 1;
-            var instancia = resultadoDeOperación ? new Usuario { Id = usuario.Id, Nombre = usuario.Nombre } : null;
-            if(instancia != null)
+            // Para probar la gestión de errores
+            // throw new System.Exception("Soy un chemisky");
+            
+            if (usuario.Roles.Any(r => rolesPermitidos.Contains(r)))
             {
-                instancia.Roles.AddRange(new string[] { "ABC", "EFG" });
+                //gestorDeFlujo.AñadirFlujo(Flujos.CREAR_ASUNTO);
+                return new Correcto<Usuario>(usuario);
             }
-
-            var resultado = new Resultado<Usuario>(resultadoDeOperación, instancia);
-            return resultado;
+            else
+            {
+                return new Error<Usuario>(usuario, "El usuario no tiene permisos");
+            }
         }
     }
 }

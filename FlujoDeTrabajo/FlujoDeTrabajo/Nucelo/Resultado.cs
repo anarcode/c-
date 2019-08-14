@@ -1,6 +1,5 @@
 ﻿namespace FlujoDeTrabajo.Nucelo
 {
-    using System;
     using Interfaces;
 
     public class Resultado<T> : IResultado<T> where T : IEntidad
@@ -17,6 +16,6 @@
             _instancia = instancia;
         }
 
-        public T Instancia() => _instancia;
+        public T ObtenerInstancia() => _instancia;
     }
 }

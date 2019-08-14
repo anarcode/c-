@@ -2,6 +2,10 @@
 {
     public interface IConfiguraciónDeFlujo
     {
-        IProcesadorDeAtributos ProcesadorDeAtributos { get; }
+        IProcesadorDeParámetros ProcesadorDeParámetros { get; }
+
+        IProcesadorDeCriticidad ProcesadorDeCriticidad { get; }
+
+        IEjecutorDeFlujo EjecutorDeFlujo { get; }
     }
 }

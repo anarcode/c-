@@ -8,7 +8,7 @@
     public class CrearAsunto : IFase
     {
         [MétodoDeFlujo]
-        public IResultado<Asunto> Procesar(Usuario usuario, string nombre)
+        public IResultado<Asunto> Procesar(Usuario usuario, DatosDeEjecución datosDeEjecución)
         {
             return new Resultado<Asunto>(true, new Asunto(usuario.Id));
         }

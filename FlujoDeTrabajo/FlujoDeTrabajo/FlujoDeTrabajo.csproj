@@ -40,23 +40,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Atributos\ErrorAvisable.cs" />
     <Compile Include="Atributos\DatoDeFlujo.cs" />
     <Compile Include="Atributos\AtributoDeMétodoDeFlujo.cs" />
     <Compile Include="Atributos\MétodoDeFlujo.cs" />
+    <Compile Include="Entidades\EjecuciónDeFlujo.cs" />
+    <Compile Include="Excepciones\ExcepciónDeFlujo.cs" />
+    <Compile Include="Excepciones\QuemarloTodo.cs" />
+    <Compile Include="Fases\FinalizarSubflujo.cs" />
     <Compile Include="Fases\FaseSinParámetros.cs" />
+    <Compile Include="Interfaces\IAsociableAFlujo.cs" />
+    <Compile Include="Interfaces\IComando.cs" />
     <Compile Include="Interfaces\IConfiguraciónDeFlujo.cs" />
+    <Compile Include="Interfaces\IEjecutorDeFlujo.cs" />
     <Compile Include="Interfaces\IEntidad.cs" />
     <Compile Include="Interfaces\IFase.cs" />
     <Compile Include="Interfaces\IFaseSinParámetros.cs" />
-    <Compile Include="Interfaces\IProcesadorDeAtributos.cs" />
+    <Compile Include="Interfaces\IObservadorDeFlujo.cs" />
+    <Compile Include="Interfaces\IProcesadorDeCriticidad.cs" />
+    <Compile Include="Interfaces\IProcesadorDeParámetros.cs" />
     <Compile Include="Interfaces\IResultado.cs" />
+    <Compile Include="Interfaces\ISubFlujo.cs" />
+    <Compile Include="Nucelo\ComandosDelGestorDeFlujo\AñadirFlujo.cs" />
+    <Compile Include="Nucelo\ComandosDelGestorDeFlujo\ComandoBase.cs" />
+    <Compile Include="Nucelo\ComandosDelGestorDeFlujo\ComandoConPilaDeEjecución.cs" />
     <Compile Include="Nucelo\ConfiguraciónBase.cs" />
+    <Compile Include="Nucelo\Criticidad.cs" />
+    <Compile Include="Nucelo\DatosDeEjecución.cs" />
+    <Compile Include="Nucelo\EjecutorDeFlujo.cs" />
+    <Compile Include="Nucelo\Correcto.cs" />
     <Compile Include="Nucelo\Error.cs" />
     <Compile Include="Nucelo\Flujo.cs" />
-    <Compile Include="Nucelo\ProcesadorDeAtributos.cs" />
+    <Compile Include="Nucelo\GestorDeFlujo.cs" />
+    <Compile Include="Nucelo\ObservadorDeFlujo.cs" />
+    <Compile Include="Nucelo\ProcesadorDeCriticidad.cs" />
+    <Compile Include="Nucelo\ProcesadorDeParámetros.cs" />
     <Compile Include="Nucelo\Resultado.cs" />
+    <Compile Include="Nucelo\ResultadoDeEjecuciónDeFase.cs" />
+    <Compile Include="Nucelo\ResultadoDeEjecuciónDeFlujo.cs" />
+    <Compile Include="Nucelo\SubFlujo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

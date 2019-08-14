@@ -8,3 +8,13 @@ C:\Desarrollo\C#\FlujoDeTrabajo\Consola\obj\Debug\Consola.exe
 C:\Desarrollo\C#\FlujoDeTrabajo\Consola\obj\Debug\Consola.pdb
 C:\Desarrollo\C#\FlujoDeTrabajo\Consola\bin\Debug\FasesDeEjemplo.dll
 C:\Desarrollo\C#\FlujoDeTrabajo\Consola\bin\Debug\FasesDeEjemplo.pdb
+C:\Desarrollo\C#\FlujoDeTrabajo\backup\Consola\bin\Debug\Consola.exe.config
+C:\Desarrollo\C#\FlujoDeTrabajo\backup\Consola\obj\Debug\Consola.exe
+C:\Desarrollo\C#\FlujoDeTrabajo\backup\Consola\obj\Debug\Consola.pdb
+C:\Desarrollo\C#\FlujoDeTrabajo\backup\Consola\bin\Debug\Consola.exe
+C:\Desarrollo\C#\FlujoDeTrabajo\backup\Consola\bin\Debug\Consola.pdb
+C:\Desarrollo\C#\FlujoDeTrabajo\backup\Consola\bin\Debug\FasesDeEjemplo.dll
+C:\Desarrollo\C#\FlujoDeTrabajo\backup\Consola\bin\Debug\FlujoDeTrabajo.dll
+C:\Desarrollo\C#\FlujoDeTrabajo\backup\Consola\bin\Debug\FasesDeEjemplo.pdb
+C:\Desarrollo\C#\FlujoDeTrabajo\backup\Consola\bin\Debug\FlujoDeTrabajo.pdb
+C:\Desarrollo\C#\FlujoDeTrabajo\backup\Consola\obj\Debug\Consola.csprojResolveAssemblyReference.cache

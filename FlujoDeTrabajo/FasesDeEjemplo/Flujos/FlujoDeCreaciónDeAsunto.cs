@@ -1,28 +1,24 @@
-﻿namespace FasesDeEjemplo.Nucelo
+﻿namespace FasesDeEjemplo.Flujos
 {
     using System.Collections.Generic;
-    using FlujoDeTrabajo.Atributos;
     using FlujoDeTrabajo.Interfaces;
     using FlujoDeTrabajo.Nucelo;
     using Fases;
 
-    public sealed class FlujoDePrueba : Flujo
+    public sealed class FlujoDeCreaciónDeAsunto : Flujo
     {
         private readonly List<IFase> _fases;
 
-        [DatoDeFlujo("nombre")]
-        public string NombreDeUsuario { get; set; }
-
         public override List<IFase> Fases => _fases;
 
-        public FlujoDePrueba() : base()
+        public FlujoDeCreaciónDeAsunto(string nombre) : base(nombre)
         {
             _fases = new List<IFase>
             {
-                new Autenticación(),
-                new Autorización(),
                 new CrearAsunto()
             };
+
+            // Observadores.Add(new Observador(this));
         }
     }
 }
